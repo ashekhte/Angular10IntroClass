@@ -3,10 +3,10 @@
 <div *ngFor="let car of inventory; trackBy: trackByVIN"
 [ngClass]="{'featured-item': car.featured}">
 <h3>{{car.year}} {{car.make}}, {{car.model}}</h3>
-<p class="gallery">
+<p class="gallery" *ngIf="car.photos.length > 0">
     <app-photo-gallery
-    (on-navigate)="handlePhotoNavigation($event, car)"
-    *ngIf="car.photos.length > 0" [photos]="car.photos">
+    [photos]="car.photos"
+    (on-navigate)="handlePhotoNavigation($event, car)">
     </app-photo-gallery>
 </p>
 <p *ngIf="car.featured">Featured car of the month!</p>
