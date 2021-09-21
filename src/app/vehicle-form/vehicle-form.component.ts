@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Button } from 'selenium-webdriver';
 import { Vehicle } from '../vehicle';
 
 @Component({
@@ -8,6 +9,11 @@ import { Vehicle } from '../vehicle';
   styleUrls: ['./vehicle-form.component.css']
 })
 export class VehicleFormComponent implements OnInit {
+
+  @Input()
+vehicle = new Vehicle("", 0, "", "", 0, 0, false, [])
+
+@Input() showCancelButton = false;
 
   @Output("on-submit")
 emitter = new EventEmitter

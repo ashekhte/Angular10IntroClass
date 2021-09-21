@@ -52,10 +52,21 @@ export class DealerInventoryComponent implements OnInit {
     },
     ]
 
+  vehicleToEdit:Vehicle = undefined
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  beginEditing(v:Vehicle) {
+    this.vehicleToEdit = v
+    }
+    commitEdit(v:Vehicle) {
+    //Copy the edited data
+    Object.assign(this.vehicleToEdit, v)
+    this.vehicleToEdit = undefined
+    }    
 
   trackByVIN(index:number, car:Vehicle) : string {
     return car.VIN
