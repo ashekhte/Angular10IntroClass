@@ -9,6 +9,7 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VehicleFormReactiveComponent } from './vehicle-form-reactive/vehicle-form-reactive.component';
+import '@angular/common/locales/global/fr';
 
 @NgModule({
   declarations: [
