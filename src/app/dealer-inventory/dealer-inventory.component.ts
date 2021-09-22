@@ -68,6 +68,10 @@ export class DealerInventoryComponent implements OnInit {
     this.vehicleToEdit = undefined
     }    
 
+  cancelEdit() {
+    this.vehicleToEdit = undefined;
+  }
+
   trackByVIN(index:number, car:Vehicle) : string {
     return car.VIN
     }

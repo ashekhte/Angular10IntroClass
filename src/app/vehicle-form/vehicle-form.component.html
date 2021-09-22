@@ -23,5 +23,7 @@
     <p *ngIf="myForm.invalid" class="error">Please enter valid values.</p>
     <button (click)="handleSubmit(myForm)"
     [disabled]="myForm.invalid">Submit</button>
-    <button *ngIf="showCancelButton">Cancel</button>
+    <button *ngIf="myForm.dirty"
+    (click)="cancelInput(myForm)"
+    >Cancel</button>
     </form>

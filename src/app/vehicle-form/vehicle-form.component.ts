@@ -11,12 +11,15 @@ import { Vehicle } from '../vehicle';
 export class VehicleFormComponent implements OnInit {
 
   @Input()
-vehicle = new Vehicle("", 0, "", "", 0, 0, false, [])
+vehicle = new Vehicle("", 0, "", "", 0, 0, false, []);
 
 @Input() showCancelButton = false;
 
   @Output("on-submit")
 emitter = new EventEmitter
+
+@Output("on-cancel")
+emitterCancel = new EventEmitter
 
   constructor() { }
 
@@ -35,6 +38,11 @@ emitter = new EventEmitter
     input.veh_featured === "" ? false : input.veh_featured,
     [])
     this.emitter.emit(v)
+    }
+
+    cancelInput(nForm:NgForm) {
+      nForm.reset();
+      this.emitterCancel.emit();
     }
 
 }

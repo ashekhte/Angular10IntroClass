@@ -16,7 +16,9 @@
 <app-vehicle-form
 *ngIf="vehicleToEdit == car"
 [vehicle]="car"
-(on-submit)="commitEdit($event)">
+(on-submit)="commitEdit($event)"
+(on-cancel)="commitEdit()"
+>
 </app-vehicle-form>
 <p>
     <button (click)="deleteVehicle(car)">Delete</button>
